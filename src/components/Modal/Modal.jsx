@@ -5,28 +5,22 @@ import { Overlay, StyledModal } from './Modal.styled';
 
 export class Modal extends Component {
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', this.handleModalClose);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
+    window.removeEventListener('keydown', this.handleModalClose);
   }
 
-  handleKeyDown = e => {
-    if (e.key === 'Escape') {
-      this.props.onClose();
-    }
-  };
-
-  handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
+  handleModalClose = e => {
+    if (e.key === 'Escape' || e.target === e.currentTarget) {
       this.props.onClose();
     }
   };
 
   render() {
     return (
-      <Overlay onClick={this.handleBackdropClick}>
+      <Overlay onClick={this.handleModalClose}>
         <StyledModal>
           <img src={this.props.largeImage} alt="pic" />
         </StyledModal>

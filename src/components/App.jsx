@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { ToastContainer, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { fetchPictures } from './services/pictures-api';
+import { fetchPictures } from '../services/pictures-api';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';

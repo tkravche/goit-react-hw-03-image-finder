@@ -30,24 +30,22 @@ export class Searchbar extends Component {
 
   render() {
     return (
-      <>
-        <StyledSearchbar>
-          <StyledSearchForm onSubmit={this.handleSubmit}>
-            <StyledSearchFormButton type="submit">
-              <FaSearch />
-            </StyledSearchFormButton>
+      <StyledSearchbar>
+        <StyledSearchForm onSubmit={this.handleSubmit}>
+          <StyledSearchFormButton type="submit">
+            <FaSearch />
+          </StyledSearchFormButton>
 
-            <StyledSearchFormInput
-              type="text"
-              autoComplete="off"
-              autoFocus
-              placeholder="Search images and photos"
-              value={this.state.search}
-              onChange={this.onInputChange}
-            />
-          </StyledSearchForm>
-        </StyledSearchbar>
-      </>
+          <StyledSearchFormInput
+            type="text"
+            autoComplete="off"
+            autoFocus
+            placeholder="Search images and photos"
+            value={this.state.search}
+            onChange={this.onInputChange}
+          />
+        </StyledSearchForm>
+      </StyledSearchbar>
     );
   }
 }
